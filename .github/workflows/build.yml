@@ -19,39 +19,6 @@ jobs:
           - cross_os: windows
             cross_arch: amd64
             go_version: "1.26.5"
-            runner: ubuntu-22.04
-          - cross_os: windows
-            cross_arch: arm64
-            go_version: "1.26.5"
-            runner: ubuntu-22.04
-          - cross_os: linux
-            cross_arch: amd64
-            go_version: "1.26.5"
-            runner: ubuntu-22.04
-          - cross_os: linux
-            cross_arch: arm64
-            go_version: "1.26.5"
-            runner: ubuntu-22.04
-          - cross_os: darwin
-            cross_arch: amd64
-            go_version: "1.26.5"
-            runner: macos-latest
-          - cross_os: darwin
-            cross_arch: arm64
-            go_version: "1.26.5"
-            runner: macos-latest
-          - cross_os: darwinlegacy
-            cross_arch: amd64
-            go_version: "1.26.5"
-            runner: macos-latest
-          - cross_os: windowslegacy
-            cross_arch: amd64
-            go_version: "1.26.5"
-            runner: macos-latest
-          - cross_os: windowslegacy
-            cross_arch: 386
-            go_version: "1.26.5"
-            runner: macos-latest
       fail-fast: false
     runs-on: ${{ matrix.runner }}
     env:
@@ -136,66 +103,6 @@ jobs:
             target: x64
             dest_suffix: windows-amd64
             common: windows-amd64
-            launcher: sccache
-          - platform: windows-11-arm
-            qt_version: "6.11.1"
-            target: arm64
-            dest_suffix: windows-arm64
-            common: windows-arm64
-            launcher: ""
-          - platform: ubuntu-22.04
-            qt_version: "6.11.1"
-            target: x86_64
-            dest_suffix: linux-amd64
-            common: linux-amd64
-            launcher: ccache
-          - platform: ubuntu-22.04
-            qt_version: "6.2.0"
-            target: x86_64
-            dest_suffix: linux-amd64-system-qt
-            common: linux-amd64
-            launcher: ccache
-          - platform: ubuntu-24.04-arm
-            qt_version: "6.11.1"
-            target: aarch64
-            dest_suffix: linux-arm64
-            common: linux-arm64
-            launcher: ccache
-          - platform: ubuntu-22.04-arm
-            qt_version: "6.2.0"
-            target: aarch64
-            dest_suffix: linux-arm64-system-qt
-            common: linux-arm64
-            launcher: ccache
-          - platform: macos-latest
-            qt_version: "6.11.1"
-            target: x86_64
-            dest_suffix: darwin-amd64
-            common: darwin-amd64
-            launcher: ccache
-          - platform: macos-latest
-            qt_version: "6.11.1"
-            target: arm64
-            dest_suffix: darwin-arm64
-            common: darwin-arm64
-            launcher: ccache
-          - platform: macos-15
-            qt_version: "6.4.3"
-            target: x86_64
-            dest_suffix: darwinlegacy-amd64
-            common: darwinlegacy-amd64
-            launcher: ccache
-          - platform: windows-latest
-            qt_version: "6.2.13"
-            target: x64
-            dest_suffix: windowslegacy-amd64
-            common: windowslegacy-amd64
-            launcher: sccache
-          - platform: windows-2022
-            qt_version: "6.2.13"
-            target: x86
-            dest_suffix: windowslegacy-386
-            common: windowslegacy-386
             launcher: sccache
       fail-fast: false
     runs-on: ${{ matrix.platform }}
